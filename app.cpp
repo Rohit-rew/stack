@@ -24,13 +24,6 @@ public :
         return stackArray[count-1];
     }
 
-    void printAll(){
-        for (int i = 0; i < count; i++)
-        {
-            cout << stackArray[i] << endl;
-        }
-    }
-
 };
 
 
@@ -46,7 +39,6 @@ int main(){
 
     cout << "Removed val : " << stack1->pop() << endl;
     cout << "Head val : " << stack1->heaVal() << endl;
-    stack1->printAll();
 
     // cout << stack1->stackArray[2] <<endl;
 
