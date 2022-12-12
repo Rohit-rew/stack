@@ -7,11 +7,21 @@ public :
     int count = 0;
     int stackArray[10]; 
 
-
-    int add(int val){
+    int push(int val){
         stackArray[count] = val;
         count++;
         return val;
+    }
+
+    int pop(){
+        int removedVal = stackArray[count-1];
+        stackArray[count] = NULL;
+        count--;
+        return removedVal;
+    }
+
+    int heaVal(){
+        return stackArray[count-1];
     }
 
     void printAll(){
@@ -27,11 +37,15 @@ public :
 int main(){
 
     Stack* stack1 = new Stack();
-    stack1->add(12);
-    stack1->add(13);
-    stack1->add(14);
-    stack1->add(15);
+    stack1->push(12);
+    stack1->push(13);
+    stack1->push(14);
+    stack1->push(15);
+    stack1->push(16);
+    stack1->push(17);
 
+    cout << "Removed val : " << stack1->pop() << endl;
+    cout << "Head val : " << stack1->heaVal() << endl;
     stack1->printAll();
 
     // cout << stack1->stackArray[2] <<endl;
@@ -39,14 +53,3 @@ int main(){
 }
 
 
-// int main(){
-
-//     int array[10];
-//     int count = 2;
-//     array[0] = 22;
-//     array[1] = 33;
-//     array[2] = 44;
-
-//     cout << array[count] <<endl;
-
-// }
