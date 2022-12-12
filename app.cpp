@@ -61,6 +61,7 @@ public :
 
 int main(){
 
+    // this is an implementation of stack using arrays.
     Stack* stack1 = new Stack();
     stack1->push(12);
     stack1->push(13);
