@@ -8,9 +8,13 @@ public :
     int stackArray[10]; 
 
     int push(int val){
-        stackArray[count] = val;
-        count++;
-        return val;
+        if(!isFull()){
+            stackArray[count] = val;
+            count++;
+            return val;
+        }else {
+            return -1;
+        }
     }
 
     int pop(){
@@ -22,6 +26,34 @@ public :
 
     int heaVal(){
         return stackArray[count-1];
+    }
+
+    bool isFull(){
+        if(count == 10){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    bool isEmpty(){
+        if(count==0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    int count (){
+        return count;
+    }
+
+    int printAll(){
+        for (int i = 0; i < count; i++)
+        {
+            cout << stackArray[i] << endl;
+        }
+        
     }
 
 };
@@ -39,8 +71,6 @@ int main(){
 
     cout << "Removed val : " << stack1->pop() << endl;
     cout << "Head val : " << stack1->heaVal() << endl;
-
-    // cout << stack1->stackArray[2] <<endl;
 
 }
 
